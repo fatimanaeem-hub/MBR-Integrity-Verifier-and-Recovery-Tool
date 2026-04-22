@@ -177,7 +177,7 @@ import parse_gpt_headergpt_info = parse_gpt_header(gpt_bytes)
 
 This module handles MBR integrity verification, corruption detection, and recovery using cryptographic hashing and forensic reference images.
 
-# Generate Reference Hash
+ ** Generate Reference Hash **
 
 
 This is a one-time setup step to create the trusted hash.
@@ -191,7 +191,7 @@ YOUR KNOWN MBR HASH IS:
 ** Integrity Testing **
 Run Integrity Check
 python -m tests.run_integrity_test
-# Output (Clean Image)
+ ** Output (Clean Image) **
 {
   "type": "MBR",
   "status": "OK",
