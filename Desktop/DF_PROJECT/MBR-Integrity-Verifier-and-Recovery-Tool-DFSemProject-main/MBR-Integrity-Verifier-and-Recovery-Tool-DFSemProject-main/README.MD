@@ -177,7 +177,7 @@ import parse_gpt_headergpt_info = parse_gpt_header(gpt_bytes)
 
 This module handles MBR integrity verification, corruption detection, and recovery using cryptographic hashing and forensic reference images.
 
-## Generate Reference Hash
+# Generate Reference Hash
 
 
 This is a one-time setup step to create the trusted hash.
@@ -188,7 +188,7 @@ MBR validation successful: Correct size (512 bytes)!
 
 YOUR KNOWN MBR HASH IS:
 59019b8b59cffb325855cdc7716d38f8ce2112b9b027f2f8516992e2e686525b
-## Integrity Testing
+** Integrity Testing **
 Run Integrity Check
 python -m tests.run_integrity_test
 # Output (Clean Image)
@@ -207,12 +207,12 @@ Output (Corrupted Image)
   "current_hash": "0cdfb6d056c96b56a5aaa40b4776ca8a6078da7877b36458831f8389903db48d",
   "expected_hash": "59019b8b59cffb325855cdc7716d38f8ce2112b9b027f2f8516992e2e686525b"
 }
-# Corruption Simulation
+** Corruption Simulation **
 
 To simulate real forensic attack scenarios, a controlled modification is performed on the MBR image.
 
 Example (Byte Modification):
-# Simulating corruption by modifying one byte
+** Simulating corruption by modifying one byte **
 with open("images/mbr_test.vhd", "r+b") as f:
     f.seek(0)
     f.write(b"\x00")
@@ -222,7 +222,7 @@ This results in:
 Change in boot code
 Different SHA-256 hash
 Integrity failure detection
-## Recovery Mechanism
+# Recovery Mechanism
 
 The recovery module restores the original MBR using a clean forensic reference image.
 
@@ -234,12 +234,12 @@ Recovery Steps:
 5. Re-verify integrity
 # Run Recovery
 python -m tests.test_recovery
-# Recovery Output
+** Recovery Output ** 
 {
   "status": "RECOVERED",
   "message": "MBR boot code restored successfully"
 }
-## Post-Recovery Verification
+** Post-Recovery Verification **
 
 After recovery, integrity is re-checked to confirm restoration.
 
