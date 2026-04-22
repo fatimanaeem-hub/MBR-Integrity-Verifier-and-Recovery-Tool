@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.vhd
+*.vhdx
+*.dd
+*.img
+*.001
+images/*.vhd
+images/*.vhdx
+images/README_IMAGES.txt
